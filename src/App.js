@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import "./style/app.css";
+import donorRegister from "./donorComponents/donorRegister";
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div className="App">
+{/* 
+          switch is used when there more than 1 path */}
+          <Switch>
+            <Route exact path="/" component={donorRegister} />
+           
+
+            {/* another path for hospitalcomponent */}
+
+        \
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
-
 export default App;
